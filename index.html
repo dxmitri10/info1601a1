@@ -1,13 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INFO 1601 - Assignment 1</title>
-    <style>
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;800&display=swap" rel="stylesheet">
+
+<title>INFO 1601  Assignment 1</title>
+
+<style>
+/* Global box sizing */
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Flex layout */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.flex-item {
+    flex: 1 1 300px;
+    background: #e0e0e0;
+    padding: 16px;
+}
+
+/* Navbar */
+nav {
+    background-color: #333333;
+    padding: 15px 30px;
+}
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+}
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+}
+
+/* Hero */
+.hero {
+    min-height: 400px;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Card */
+.card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    max-width: 400px;
+    margin: 20px auto;
+}
+.card img {
+    width: 100%;
+    display: block;
+    border-radius: 15px;
+    margin-bottom: 16px;
+}
+.card-header {
+    font-size: 18px;
+    font-weight: 800;
+    color: #000000;
+    margin-bottom: 10px;
+}
+.card-body {
+    font-size: 14px;
+    color: #444444;
+    line-height: 1.6;
+}
+
+/* Buttons */
+button {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn-primary {
+    background: #007bff;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+}
+.btn-secondary {
+    background: #6c757d;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+}
+
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 12px;
+    color: #ffffff;
+}
+.badge-success {
+    background: #28a745;
+}
+.badge-danger {
+    background: #dc3545;
+}
+
+/* Form */
+.form-container {
+    max-width: 600px;
+    padding: 20px;
+    background: #f5f5f5;
+    margin: 20px auto;
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333333;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 2px solid #cccccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Figure */
+figure {
+    width: 30vw;
+    border: 1px solid #ccc;
+    margin: 20px auto;
+    text-align: center;
+}
+figure img {
+    max-width: 100%;
+    display: block;
+}
+figcaption {
+    font-size: 14px;
+    color: #555555;
+    padding: 8px;
+}
+
+/* Accordion */
+.accordion details {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+}
+.accordion summary {
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 12px;
+}
+
+/* Table */
+.table-container {
+    max-width: 600px;
+    margin: 20px auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+th {
+    background: #333333;
+    color: #ffffff;
+    padding: 12px;
+    text-align: left;
+}
+td {
+    padding: 12px;
+    text-align: left;
+}
+tbody tr:nth-child(even) {
+    background: #f5f5f5;
+}
+
+/* Dialog */
+dialog[popover] {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+footer {
+    background: #222222;
+    color: #ffffff;
+    padding: 30px 0;
+    text-align: center;
+}
+</style>
 </head>
+
 <body>
-   <h1>INFO 1601 - Assignment 1</h1>
+
+<nav>
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Articles</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div>
+        <h1>Hero Heading</h1>
+        <p>Centered hero content</p>
+        <button class="btn-primary">Get Started</button>
+    </div>
+</section>
+
+<div class="card">
+    <img src="pics/pic 1.jpg" alt="Card image">
+    <div class="card-header">Card Header</div>
+    <div class="card-body">
+        This is the card body text with comfortable spacing and readable size.
+    </div>
+</div>
+
+<div class="container flex-container">
+    <div class="flex-item">Flex Item 1</div>
+    <div class="flex-item">Flex Item 2</div>
+    <div class="flex-item">Flex Item 3</div>
+</div>
+
+<div class="container">
+    <button class="btn-primary">Primary</button>
+    <button class="btn-secondary">Secondary</button>
+</div>
+
+<div class="container">
+    <span class="badge badge-success">Success</span>
+    <span class="badge badge-danger">Danger</span>
+</div>
+
+<div class="form-container">
+    <form>
+        <label>Name</label>
+        <input type="text">
+        <label>Email</label>
+        <input type="email">
+        <button class="btn-primary">Submit</button>
+    </form>
+</div>
+
+<figure>
+    <img src="pics/pic 2.jpg" alt="Sample">
+    <figcaption>Figure 1: Sample Image</figcaption>
+</figure>
+
+<div class="accordion">
+    <details>
+        <summary>Accordion Heading</summary>
+        <p>Accordion content.</p>
+    </details>
+</div>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr><th>Column A</th><th>Column B</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Row 1</td><td>Data</td></tr>
+            <tr><td>Row 2</td><td>Data</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<button class="btn-primary" popovertarget="dialogBox">Open Dialog</button>
+
+<dialog id="dialogBox" popover>
+    <p>This is a popover dialog.</p>
+    <button popoverclose class="btn-secondary">Close</button>
+</dialog>
+
+<footer>
+    &copy; 2026 INFO 1601 Assignment 1
+</footer>
+
 </body>
 </html>
